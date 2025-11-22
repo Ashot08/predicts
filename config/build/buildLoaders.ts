@@ -30,8 +30,21 @@ export const buildLoaders = ({isDev}: BuildOptions): webpack.RuleSetRule[] => {
     use: 'ts-loader',
     exclude: /node_modules/,
   };
+
+  const imageLoader = {
+    test: /\.(png|jpg|jpeg|gif)$/i,
+    type: 'asset/resource',
+  };
+
+  const svgLoader = {
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+  };
+
   return [
     typeScriptLoader,
     cssLoader,
+    imageLoader,
+    svgLoader,
   ];
 }

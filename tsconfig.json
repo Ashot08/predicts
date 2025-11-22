@@ -7,6 +7,10 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   },
@@ -14,5 +18,6 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+//  "include": ["src/app/types/global.d.ts"]
 }
