@@ -22,4 +22,10 @@ export default defineConfig([
       '@typescript-eslint/no-explicit-any': 1,
     },
   },
+  {
+    files: ['**/src/**/*.test.{ts,tsx}'],
+    rules: {
+      'i18next/no-literal-string': 0,
+    }
+  }
 ]);
