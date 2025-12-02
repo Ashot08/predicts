@@ -1,5 +1,11 @@
 .button {
   cursor: pointer;
+  color: var(--primary-color);
+}
+
+.primary {
+  color: var(--inverted-primary-color);
+  background-color: var(--secondary-color);
 }
 
 .clear {
@@ -9,4 +15,9 @@
   border: none;
   outline: none;
   line-height: 1;
+}
+
+.outlined {
+  background-color: transparent;
+  border: 1px solid var(--inverted-bg-color);
 }

@@ -1,14 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
-
 import { fn } from 'storybook/test';
-
-import { Button, ButtonTheme } from './Button';
 import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'shared/ui/Button',
-  component: Button,
+  title: 'shared/ui/AppLink',
+  component: AppLink,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
   },
@@ -19,8 +17,8 @@ const meta = {
     backgroundColor: { control: 'color' },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args
-  args: { onClick: fn(),     children: 'Button Text', },
-} satisfies Meta<typeof Button>;
+  args: { onClick: fn(),     children: 'Link Text', },
+} satisfies Meta<typeof AppLink>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -28,39 +26,30 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    theme: ButtonTheme.PRIMARY_BUTTON,
+    theme: AppLinkTheme.PRIMARY,
+    to: '#',
   },
 };
 
 export const PrimaryDark: Story = {
   args: {
-    theme: ButtonTheme.PRIMARY_BUTTON,
+    theme: AppLinkTheme.PRIMARY,
+    to: '/',
   },
   parameters: {theme: Theme.DARK}
 };
 
-export const Clear: Story = {
+export const Secondary: Story = {
   args: {
-    theme: ButtonTheme.CLEAR,
+    theme: AppLinkTheme.SECONDARY,
+    to: '/',
   },
 };
 
-export const ClearDark: Story = {
+export const SecondaryDark: Story = {
   args: {
-    theme: ButtonTheme.CLEAR,
-  },
-  parameters: {theme: Theme.DARK}
-};
-
-export const Outlined: Story = {
-  args: {
-    theme: ButtonTheme.OUTLINED,
-  },
-};
-
-export const OutlinedDark: Story = {
-  args: {
-    theme: ButtonTheme.OUTLINED,
+    theme: AppLinkTheme.SECONDARY,
+    to: '/',
   },
   parameters: {theme: Theme.DARK}
 };
