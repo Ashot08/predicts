@@ -13,6 +13,8 @@ node_modules
 dist
 dist-ssr
 *.local
+testplane
+testplane-report
 
 # Editor directories and files
 .vscode/*

@@ -1,8 +1,0 @@
-{
-    "compilerOptions": {
-        "types": [
-            "testplane",
-            "@testplane/testing-library"
-        ]
-    }
-}
