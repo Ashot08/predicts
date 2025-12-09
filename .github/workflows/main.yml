@@ -4,8 +4,7 @@ on:
   pull_request:
     branches: [ dev, master ]
   push:
-    branches:
-      - *
+    branches: [*]
 jobs:
   pipeline:
     runs-on: ubuntu-latest
@@ -14,18 +13,17 @@ jobs:
         node-version: [ 20 ]
     steps:
       - uses: actions/checkout@v5
-      - run: echo "START CHECK"
       - name: Use Node.js ${{ matrix.node }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
       - name: install node modules
-      - run: npm install
+      run: npm install
       - name: build production
-      - run: npm run build:prod
+      run: npm run build:prod
       - name: Run ts lint
-      - run: npm run lint:ts
+      run: npm run lint:ts
       - name: Run ts scss
-      - run: npm run lint:scss
+      run: npm run lint:scss
       - name: Run unit tests
-      - run: npm run test
+      run: npm run test
