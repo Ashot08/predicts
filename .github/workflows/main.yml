@@ -4,8 +4,10 @@ on:
   pull_request:
     branches: [ dev, master ]
   push:
+    branches:
+      - *
 jobs:
-  Linting_&_Testing:
+  pipeline:
     runs-on: ubuntu-latest
     strategy:
       matrix:
