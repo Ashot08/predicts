@@ -1,27 +1,36 @@
 on:
-  pull_request:
-    branches: [ dev, master ]
   push:
-    branches: [ dev, master, 4-ci-github-actions ]
+    branches: [ master ]
+  pull_request:
+    branches: [ master, 4-ci-github-actions ]
 jobs:
   pipeline:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 20.x ]
+        node-version: [ 17.x ]
+
     steps:
-      uses: actions/checkout@v2
-      name: Staring Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-      name: install node modules
-      run: npm install
-      name: build production
-      run: npm run build:prod
-      name: Run ts lint
-      run: npm run lint:ts
-      name: Run ts scss
-      run: npm run lint:scss
-      name: Run unit tests
-      run: npm run test
+      - uses: actions/checkout@v2
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install modules
+        run: npm install
+      - name: build production project
+        run: npm run build:prod
+        if: always()
+      - name: linting typescript
+        run: npm run lint:ts
+        if: always()
+      - name: linting css
+        run: npm run lint:scss
+      - name: unit testing
+        if: always()
+        run: npm run test:unit
+      - name: build storybook
+        run: npm run storybook:build
+        if: always()
+      - name: screenshot testing
+        run: npm run test:ui:ci
