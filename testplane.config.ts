@@ -22,18 +22,13 @@ export default {
   },
   headless: true, // Essential for GitHub CI
   browsers: {
-    "linux-chrome": {
+    chrome: {
+      headless: true,
       desiredCapabilities: {
         browserName: "chrome",
         "goog:chromeOptions": {
           args: ["--no-sandbox"] // Essential for GitHub CI
         }
-      }
-    },
-    chrome: {
-      headless: true,
-      desiredCapabilities: {
-        browserName: "chrome"
       }
     },
     firefox: {
