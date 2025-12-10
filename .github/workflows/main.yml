@@ -28,5 +28,26 @@ jobs:
         run: npm run test
       - name: build storybook
         run: npm run build-storybook
-      - name: screenshot testing
-        run: npm run test:screenshots
+  testplane_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Cache npm dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install npm deps
+        run: npm install
+
+      - name: Run Testplane
+        id: testplane
+        uses: gemini-testing/gh-actions-testplane@v1
