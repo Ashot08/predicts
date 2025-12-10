@@ -51,3 +51,5 @@ jobs:
       - name: Run Testplane
         id: testplane
         uses: gemini-testing/gh-actions-testplane@v1
+        with:
+          storybook: 'true'
