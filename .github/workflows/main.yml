@@ -1,6 +1,6 @@
 on:
   push:
-    branches: [ master ]
+    branches: [ master, 4-ci-github-actions ]
   pull_request:
     branches: [ master, 4-ci-github-actions ]
 jobs:
