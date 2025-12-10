@@ -1,5 +1,3 @@
-name: Linting and testing on push or pull-request
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   pull_request:
     branches: [ dev, master ]
