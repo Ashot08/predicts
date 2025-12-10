@@ -11,20 +11,19 @@ jobs:
     strategy:
       matrix:
         node-version: [ 20.x ]
-
     steps:
       uses: actions/checkout@v2
-      - name: Staring Node.js ${{ matrix.node-version }}
+      name: Staring Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-      - name: install node modules
+      name: install node modules
       run: npm install
-      - name: build production
+      name: build production
       run: npm run build:prod
-      - name: Run ts lint
+      name: Run ts lint
       run: npm run lint:ts
-      - name: Run ts scss
+      name: Run ts scss
       run: npm run lint:scss
-      - name: Run unit tests
+      name: Run unit tests
       run: npm run test
