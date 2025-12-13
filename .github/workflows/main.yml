@@ -1,8 +1,8 @@
 on:
   push:
-    branches: [ master, 4-ci-github-actions ]
+    branches: [ master, dev ]
   pull_request:
-    branches: [ master, 4-ci-github-actions ]
+    branches: [ master, dev ]
 jobs:
   pipeline:
     runs-on: ubuntu-latest
