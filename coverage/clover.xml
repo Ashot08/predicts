@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1764052634591" clover="3.2.0">
-  <project timestamp="1764052634591" name="All files">
-    <metrics statements="48" coveredstatements="37" conditionals="13" coveredconditionals="7" methods="19" coveredmethods="12" elements="80" coveredelements="56" complexity="0" loc="48" ncloc="48" packages="13" files="14" classes="14"/>
+<coverage generated="1765621093821" clover="3.2.0">
+  <project timestamp="1765621093821" name="All files">
+    <metrics statements="49" coveredstatements="38" conditionals="15" coveredconditionals="9" methods="19" coveredmethods="12" elements="83" coveredelements="59" complexity="0" loc="49" ncloc="49" packages="13" files="14" classes="14"/>
     <package name="config.jest">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="jestEmptyComponent.tsx" path="/home/anton/WebstormProjects/predicts/config/jest/jestEmptyComponent.tsx">
@@ -72,11 +72,12 @@
         <line num="25" count="17" type="stmt"/>
       </file>
     </package>
-    <package name="src.shared.lib.renderWithTranslation">
-      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="renderWithTranslation.tsx" path="/home/anton/WebstormProjects/predicts/src/shared/lib/renderWithTranslation/renderWithTranslation.tsx">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="7" count="2" type="stmt"/>
+    <package name="src.shared.lib.tests.renderComponent">
+      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="renderComponent.tsx" path="/home/anton/WebstormProjects/predicts/src/shared/lib/tests/renderComponent/renderComponent.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="13" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.shared.ui.Button">

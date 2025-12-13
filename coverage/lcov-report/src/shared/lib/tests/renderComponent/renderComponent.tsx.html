@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/widgets/Sidebar/ui/Sidebar/Sidebar.tsx</title>
+    <title>Code coverage report for src/shared/lib/tests/renderComponent/renderComponent.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../../index.html">All files</a> / <a href="index.html">src/widgets/Sidebar/ui/Sidebar</a> Sidebar.tsx</h1>
+        <h1><a href="../../../../../index.html">All files</a> / <a href="index.html">src/shared/lib/tests/renderComponent</a> renderComponent.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -87,9 +87,7 @@
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -100,11 +98,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -114,33 +111,30 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import classes from './Sidebar.module.scss';
-import { classNames } from 'shared/lib/classNames';
-import { useState } from 'react';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-import { LangSwitcher } from 'widgets/LangSwitcher';
-import { useTranslation } from 'react-i18next';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ReactNode } from 'react';
+import { I18nextProvider } from 'react-i18next';
+import i18n from '../../../config/i18n/i18nForTests';
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 &nbsp;
-interface ISidebarProps {
-  className?: string;
+export interface componentRenderOptions {
+  route?: string;
 }
 &nbsp;
-export const Sidebar = ({className} : ISidebarProps) =&gt; {
-  const [collapsed, setCollapsed] = useState(false);
-  const {t} = useTranslation();
-  const onToggle = () =&gt; {setCollapsed(prev =&gt; !prev)}
-  return (
-    &lt;div data-testid={"sidebar"} className={classNames(classes.sidebar, className, {[classes.collapsed]: collapsed})}&gt;
-      &lt;button data-testid={'sidebar-toggle-button'} onClick={onToggle}&gt;{t('toggle')}&lt;/button&gt;
+export function renderComponent(component: ReactNode, options: componentRenderOptions = {}) {
 &nbsp;
-      &lt;ThemeSwitcher/&gt;
-      &lt;LangSwitcher /&gt;
+  const {route = '/'} = options;
 &nbsp;
-      SIDEBAR
-    &lt;/div&gt;
-  );
-};
+  return render(&lt;MemoryRouter
+    future={{
+      v7_relativeSplatPath: true,
+      v7_startTransition: true,
+    }} initialEntries={[route]}&gt;
+    &lt;I18nextProvider i18n={i18n}&gt;
+      {component}
+    &lt;/I18nextProvider&gt;,
+  &lt;/MemoryRouter&gt;);
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

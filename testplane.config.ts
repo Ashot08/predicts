@@ -20,11 +20,15 @@ export default {
       ]
     }
   },
+  headless: true, // Essential for GitHub CI
   browsers: {
     chrome: {
       headless: true,
       desiredCapabilities: {
-        browserName: "chrome"
+        browserName: "chrome",
+        "goog:chromeOptions": {
+          args: ["--no-sandbox"] // Essential for GitHub CI
+        }
       }
     },
     firefox: {
