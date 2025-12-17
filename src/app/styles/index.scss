@@ -3,8 +3,12 @@
 @use "./themes/light";
 @use "./themes/dark";
 
+body.overflow-hidden {
+  overflow: hidden;
+}
+
 .app {
-  min-height: 100vh;
+  min-height: 1000vh;
   font: var(--font-m);
   background-color: var(--bg-color);
   color: var(--primary-color);
