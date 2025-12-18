@@ -7,6 +7,17 @@
   align-items: center;
   justify-content: center;
   z-index: var(--modal-z-index);
+  transition: 0.4s;
+  color: var(--modal-font-color);
+
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &.visible {
+    opacity: 1;
+  }
 }
 
 .overlay {
@@ -20,8 +31,17 @@
 
 .content {
   position: relative;
-  padding: var(--content-padding-m);
+  padding: var(--content-padding-l) var(--content-padding-m);
   background-color: var(--modal-content-bg);
   border-radius: var(--content-radius-m);
   z-index: 2;
+  max-width: 500px;
+  min-width: 240px;
+}
+
+.closeButton {
+  color: var(--modal-font-color);
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
