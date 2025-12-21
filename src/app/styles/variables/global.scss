@@ -9,4 +9,17 @@
   --navbar-height: 48px;
   --sidebar-width: 300px;
   --sidebar-collapsed-width: 80px;
+
+  // static colors
+  --overlay-color: rgb(0 0 0 / 50%);
+  --modal-content-bg: #fff;
+  --modal-font-color: #333;
+
+  // content
+  --content-padding-m: 20px;
+  --content-padding-l: 30px;
+  --content-radius-m: 8px;
+
+  // z-index
+  --modal-z-index: 20;
 }

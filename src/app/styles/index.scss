@@ -3,6 +3,10 @@
 @use "./themes/light";
 @use "./themes/dark";
 
+body.overflow-hidden {
+  overflow: hidden;
+}
+
 .app {
   min-height: 100vh;
   font: var(--font-m);

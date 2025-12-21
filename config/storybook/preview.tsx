@@ -34,7 +34,7 @@ const preview: Preview = {
       },
     (Story) => {
           return <BrowserRouter>
-            <Story />
+              <Story />
           </BrowserRouter>;
     },
   ],
