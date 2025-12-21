@@ -1,6 +1,6 @@
 import classes from './Spinner.module.scss';
 import { classNames } from 'shared/lib/classNames';
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 
 export enum SpinnerTheme {
   DEFAULT = 'default',

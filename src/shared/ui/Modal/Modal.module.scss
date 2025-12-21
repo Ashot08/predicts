@@ -9,15 +9,7 @@
   z-index: var(--modal-z-index);
   transition: 0.4s;
   color: var(--modal-font-color);
-
-  &.hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  &.visible {
-    opacity: 1;
-  }
+  opacity: 0;
 }
 
 .overlay {
