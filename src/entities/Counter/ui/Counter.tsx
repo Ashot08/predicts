@@ -19,10 +19,10 @@ export const Counter = ({className} : ICounterProps) => {
     dispatch( counterActions.decrement() );
   };
   return (
-    <div className={classNames(classes.counter, className)}>
-      <div>{counterValue}</div>
-      <div><Button onClick={increment}>inc</Button></div>
-      <div><Button onClick={decrement}>dec</Button></div>
+    <div data-testid={"counter"} className={classNames(classes.counter, className)}>
+      <div data-testid={"counter-value"}>{counterValue}</div>
+      <div><Button data-testid={"counter-increment-btn"} onClick={increment}>inc</Button></div>
+      <div><Button data-testid={"counter-decrement-btn"} onClick={decrement}>dec</Button></div>
     </div>
   );
 };
